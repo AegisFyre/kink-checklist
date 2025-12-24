@@ -2,8 +2,8 @@
    {
     "id": "relationship-structure",
     "title": "Relationship Structure",
-    "engine":"rs",
-    "schema":"rs-schema.json"
+    "engine": "rs",
+    "schema": "rs-schema.json"
   },
   {
     "id": "power-authority",
@@ -32,4 +32,5 @@
   }
   
 ]
+
 
