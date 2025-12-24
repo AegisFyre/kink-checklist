@@ -1,4 +1,10 @@
 [
+   {
+    "id": "relationship-structure",
+    "title": "Relationship Structure",
+    "engine":"rs",
+    "schema":"rs-schema.json"
+  },
   {
     "id": "power-authority",
     "title": "Power & Authority",
@@ -26,3 +32,4 @@
   }
   
 ]
+
