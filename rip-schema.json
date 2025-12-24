@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "title": "Roleplay, Identity & Persona",
+  "groups": [
+    {
+      "id": "rp-styles",
+      "label": "Roleplay styles",
+      "activities": [
+        { "id": "rp.scenario", "label": "Scenario-based roleplay (defined scenes)" },
+        { "id": "rp.improvised", "label": "Improvised/in-the-moment roleplay" },
+        { "id": "rp.textual", "label": "Text or written roleplay" },
+        { "id": "rp.costume", "label": "Costumes or visual presentation" }
+      ]
+    },
+    {
+      "id": "identity-adoption",
+      "label": "Identity adoption",
+      "activities": [
+        { "id": "id.titles", "label": "Using titles or names during roleplay" },
+        { "id": "id.gender_play", "label": "Gender role or gender expression play" },
+        { "id": "id.age_play", "label": "Age-based roles" },
+        { "id": "id.species", "label": "Animal, creature, or non-human personas" }
+      ]
+    },
+    {
+      "id": "persona-persistence",
+      "label": "Persona persistence",
+      "activities": [
+        { "id": "pp.scene_only", "label": "Persona exists only during scenes" },
+        { "id": "pp.session", "label": "Persona persists for a session or day" },
+        { "id": "pp.long_term", "label": "Ongoing or long-term persona" }
+      ]
+    },
+    {
+      "id": "fantasy-themes",
+      "label": "Fantasy themes",
+      "activities": [
+        { "id": "ft.power_fantasy", "label": "Power or authority fantasy" },
+        { "id": "ft.rescue", "label": "Rescue or protection narratives" },
+        { "id": "ft.corruption", "label": "Corruption or temptation themes" },
+        { "id": "ft.domestic", "label": "Domestic or everyday-life fantasy" }
+      ]
+    },
+    {
+      "id": "reality-boundaries",
+      "label": "Reality vs fiction boundaries",
+      "activities": [
+        { "id": "rb.clear_out", "label": "Clear scene start/end and debrief" },
+        { "id": "rb.soft_bleed", "label": "Some emotional bleed allowed" },
+        { "id": "rb.no_bleed", "label": "Strict separation from real identity" }
+      ]
+    }
+  ]
+}

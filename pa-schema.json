@@ -1,0 +1,47 @@
+{
+  "categoryId": "power-authority",
+  "title": "Power & Authority",
+  "version": "1.0",
+  "groups": [
+    {
+      "id": "pa-authority-style",
+      "title": "Authority style",
+      "activities": [
+        { "id": "pa.authority.commands", "label": "Direct commands" },
+        { "id": "pa.authority.decision_making", "label": "One partner makes decisions for the other (*in agreed upon areas)" },
+        { "id": "pa.authority.rules_protocols", "label": "Rules & protocols (standing rules, rituals, etc.)" },
+        { "id": "pa.authority.formal_titles", "label": "Honorifics & titles (Sir/Ma’am, Daddy, etc.)" }
+      ]
+    },
+    {
+      "id": "pa-control-domains",
+      "title": "Control domains (what authority applies to)",
+      "activities": [
+        { "id": "pa.control.sexual", "label": "Sexual control (when/if sex happens, orgasm control)" },
+        { "id": "pa.control.social", "label": "Social control (association with others, locations, etc.)" },
+        { "id": "pa.control.schedule", "label": "Schedule/time control (bedtime, check-ins)" },
+        { "id": "pa.control.money", "label": "Money/resource control (allowance, budgets)" }
+      ]
+    },
+    {
+      "id": "pa-obedience-discipline",
+      "title": "Obedience & discipline",
+      "activities": [
+        { "id": "pa.discipline.corrections", "label": "Corrections (non-punitive reminders, resets)" },
+        { "id": "pa.discipline.punishments", "label": "Punishments (agreed upon consequences)" },
+        { "id": "pa.discipline.tasks_service", "label": "Tasks/service as obedience (chores, service acts)" },
+        { "id": "pa.discipline.inspection", "label": "Inspection/review (posture, grooming, rules check)" }
+      ]
+    },
+    {
+      "id": "pa-ownership-language",
+      "title": "Ownership language & symbols",
+      "activities": [
+        { "id": "pa.ownership.language", "label": "Ownership language (\"mine\", \"owned\")" },
+        { "id": "pa.ownership.contracts", "label": "Agreements/contracts (written or verbal)" },
+        { "id": "pa.ownership.collar", "label": "Collaring as symbol of commitment" },
+        { "id": "pa.ownership.tattoo", "label": "Tattoo or permanent body changes as symbol of commitment" }
+      ]
+    }
+  ]
+}

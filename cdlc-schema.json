@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "title": "Care, Dependency & Daily-Life Control",
+  "groups": [
+    {
+      "id": "care-modes",
+      "label": "Care modes",
+      "activities": [
+        { "id": "cdlc.care.aftercare_intensive", "label": "Intensive aftercare (extended holding, reassurance, grounding)" },
+        { "id": "cdlc.care.caretaking_nonsexual", "label": "Caretaking that is not sexual (comfort, tending needs)" },
+        { "id": "cdlc.care.praise_nurture", "label": "Nurturing praise / reassurance as a core element" },
+        { "id": "cdlc.care.guided_regulation", "label": "Guided regulation (breathing, grounding, structured calming)" }
+      ]
+    },
+    {
+      "id": "dependency-dynamics",
+      "label": "Dependency dynamics",
+      "activities": [
+        { "id": "cdlc.dependency.checkins_required", "label": "Regular check-ins as an expectation (daily/weekly)" },
+        { "id": "cdlc.dependency.permission_based", "label": "Permission-based dependency (ask to do X, receive approval)" },
+        { "id": "cdlc.dependency.structure_accountability", "label": "Accountability structure (goals, routines, reporting progress)" }
+      ]
+    },
+    {
+      "id": "daily-life-control",
+      "label": "Daily-life control (negotiated areas)",
+      "activities": [
+        { "id": "cdlc.life.routines_bedtime", "label": "Bedtime or sleep routines (curfew, bedtime rules)" },
+        { "id": "cdlc.life.food_hydration", "label": "Food/hydration guidance or rules" },
+        { "id": "cdlc.life.clothing_presentation", "label": "Clothing/presentation guidance (what to wear, how to present)" },
+        { "id": "cdlc.life.phone_screen", "label": "Phone/screen-time limits or expectations" }
+      ]
+    },
+    {
+      "id": "monitoring-supervision",
+      "label": "Monitoring & supervision",
+      "activities": [
+        { "id": "cdlc.monitoring.location_checkins", "label": "Location check-ins" },
+        { "id": "cdlc.monitoring.activity_reporting", "label": "Reporting activities (what you did, who you saw)" },
+        { "id": "cdlc.monitoring.routine_verification", "label": "Verification of routines (proof/photos/logs)" }
+      ]
+    },
+    {
+
+      "id": "limits-safety",
+      "label": "Limits & safety structures",
+      "activities": [
+        { "id": "cdlc.safety.opt_in_only", "label": "Opt-in only (no assumptions; explicit yes each time)" },
+        { "id": "cdlc.safety.pause_words", "label": "Pause words/check-in prompts beyond safewords" },
+        { "id": "cdlc.safety.no_intox", "label": "No intoxication with control/caretaking dynamics" },
+        { "id": "cdlc.safety.debrief_required", "label": "Debrief required after scenes/episodes (what worked, what didn’t)" }
+      ]
+    }
+  ]
+}

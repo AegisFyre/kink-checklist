@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kink Compatibility Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --border: #d7d7d7;
+      --muted: #666;
+      --bg-soft: #fafafa;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    header {
+      padding: 1rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    nav button {
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      padding: 0.45rem 0.65rem;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background: var(--bg-soft);
+    }
+
+    nav button[aria-current="page"] {
+      border-color: #999;
+      background: var(--bg-soft);
+      font-weight: 600;
+    }
+
+    main {
+      padding: 1rem;
+    }
+
+    h2 {
+      margin: 0 0 0.75rem 0;
+    }
+
+    .group {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: white;
+    }
+
+    .group h3 {
+      margin: 0 0 0.75rem 0;
+    }
+
+    .v1-header {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, auto);
+      gap: 0.5rem;
+      align-items: end;
+
+      padding: 0.25rem 0 0.5rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 0.35rem;
+    }
+
+    .v1-header div:nth-child(1) {
+      font-weight: 600;
+      color: #111;
+    }
+
+    .activity {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, auto);
+      gap: 0.5rem;
+      align-items: center;
+
+      padding: 0.35rem 0;
+      border-top: 1px solid #eee;
+    }
+
+    .activity:first-of-type {
+      border-top: 0;
+    }
+
+    .activity .label {
+      line-height: 1.25;
+    }
+
+    .activity input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+    }
+
+    select {
+      min-width: 9rem;
+      padding: 0.4rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: white;
+    }
+
+    select:disabled {
+      opacity: 0.55;
+      background: #f3f3f3;
+    }
+
+    .controls {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .controls button {
+      padding: 0.55rem 0.8rem;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      background: var(--bg-soft);
+    }
+
+    .status {
+      margin-left: 1rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    @media (max-width: 680px) {
+      .activity,
+      .v1-header {
+        grid-template-columns: 1fr;
+      }
+
+      select {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .activity input[type="checkbox"] {
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Kink Compatibility Checklist</h1>
+    <nav id="category-nav"></nav>
+  </header>
+
+  <main>
+    <div id="category-root"></div>
+
+    <div class="controls">
+      <button id="btn-save" type="button">Save</button>
+      <button id="btn-clear" type="button">Clear</button>
+      <span id="status" class="status" aria-live="polite"></span>
+    </div>
+  </main>
+
+  <script>
+    /* ============================================================
+       GLOBAL APP STATE
+    ============================================================ */
+
+    const state = {
+      profileId: "me",        // saves as "me" for future partner comparison
+      categories: [],
+      currentCategory: null,
+      currentSchema: null,
+      responses: {}
+    };
+
+    /* ==========================================
+       CONSTANTS
+    ============================================= */
+
+    const INTEREST_OPTIONS = [
+      ["hard_limit", "Hard limit"],
+      ["soft_limit", "Soft limit"],
+      ["maybe", "Maybe"],
+      ["yes", "Yes"],
+      ["fetish_need", "Fetish need"]
+    ];
+
+    init();
+
+    async function init() {
+      await loadCategoryRegistry();
+      buildNav();
+
+      if (state.categories.length > 0) {
+        selectCategory(state.categories[0]);
+      } else {
+        document.getElementById("category-root").innerHTML =
+          "<p>No categories found. Check categories.json.</p>";
+      }
+    }
+
+    /* =====================================
+       CATEGORY REGISTRY
+    ======================================== */
+
+    async function loadCategoryRegistry() {
+      const res = await fetch("categories.json");
+      state.categories = await res.json();
+    }
+
+    function buildNav() {
+      const nav = document.getElementById("category-nav");
+      nav.innerHTML = "";
+
+      state.categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.textContent = cat.title;
+        btn.type = "button";
+        btn.addEventListener("click", () => selectCategory(cat));
+        nav.appendChild(btn);
+      });
+    }
+
+    function setActiveNav() {
+      const nav = document.getElementById("category-nav");
+      const buttons = [...nav.querySelectorAll("button")];
+
+      buttons.forEach((btn, idx) => {
+        const cat = state.categories[idx];
+        const isActive = cat?.id === state.currentCategory?.id;
+        if (isActive) btn.setAttribute("aria-current", "page");
+        else btn.removeAttribute("aria-current");
+      });
+    }
+
+    /* ============================================================
+       CATEGORY SELECTION
+    ============================================================ */
+
+    async function selectCategory(cat) {
+      state.currentCategory = cat;
+      setActiveNav();
+
+      state.currentSchema = await loadSchema(cat.schema);
+      loadResponses();
+
+      renderV1(state.currentSchema);
+      setStatus("");
+    }
+
+    async function loadSchema(path) {
+      const res = await fetch(path);
+      return res.json();
+    }
+
+    function storageKey() {
+      const { id } = state.currentCategory;
+      const version = state.currentSchema.version;
+      return `kink.v1.${state.profileId}.${id}.v${version}`;
+    }
+
+    function loadResponses() {
+      const raw = localStorage.getItem(storageKey());
+      state.responses = raw ? (JSON.parse(raw).responses || {}) : {};
+    }
+
+    function saveResponses() {
+      if (!state.currentCategory || !state.currentSchema) {
+        setStatus("Nothing to save yet.");
+        return;
+      }
+
+      const payload = {
+        schemaVersion: state.currentSchema.version,
+        updatedAt: new Date().toISOString(),
+        responses: state.responses
+      };
+      localStorage.setItem(storageKey(), JSON.stringify(payload));
+      setStatus("Saved.");
+    }
+
+    function clearResponses() {
+      state.responses = {};
+      // re-render current category with empty state
+      if (state.currentSchema) renderV1(state.currentSchema);
+      setStatus("Cleared (not saved).");
+    }
+
+    /* =============================================
+       RENDERER (V1)
+    =================================================== */
+
+    function renderV1(schema) {
+      const root = document.getElementById("category-root");
+      root.innerHTML = "";
+
+      const h2 = document.createElement("h2");
+      h2.textContent = schema.title || (state.currentCategory?.title ?? "Category");
+      root.appendChild(h2);
+
+      if (!schema.groups || !Array.isArray(schema.groups)) {
+        const p = document.createElement("p");
+        p.textContent = "Schema error: expected schema.groups to be an array.";
+        root.appendChild(p);
+        return;
+      }
+
+      schema.groups.forEach(group => {
+        const section = document.createElement("section");
+        section.className = "group";
+
+        const h3 = document.createElement("h3");
+        h3.textContent = group.title;
+        section.appendChild(h3);
+
+        const header = document.createElement("div");
+        header.className = "v1-header";
+        header.innerHTML = `
+          <div>Activity</div>
+          <div>Done</div>
+          <div>Rating</div>
+          <div>Interest</div>
+        `;
+        section.appendChild(header);
+
+        (group.activities || []).forEach(act => {
+          section.appendChild(renderActivityRow(act));
+        });
+
+        root.appendChild(section);
+      });
+    }
+
+    function renderActivityRow(act) {
+      const row = document.createElement("div");
+      row.className = "activity";
+
+      const label = document.createElement("div");
+      label.className = "label";
+      label.textContent = act.label;
+      row.appendChild(label);
+
+      // DONE
+      const done = document.createElement("input");
+      done.type = "checkbox";
+      done.setAttribute("aria-label", `${act.label}: done`);
+
+      // RATING
+      const rating = document.createElement("select");
+      rating.setAttribute("aria-label", `${act.label}: rating (1–5)`);
+      rating.innerHTML =
+        `<option value="">—</option>` +
+        [1, 2, 3, 4, 5].map(n => `<option value="${n}">${n}</option>`).join("");
+
+      // INTEREST
+      const interest = document.createElement("select");
+      interest.setAttribute("aria-label", `${act.label}: interest level`);
+      interest.innerHTML =
+        `<option value="">—</option>` +
+        INTEREST_OPTIONS.map(([v, t]) => `<option value="${v}">${t}</option>`).join("");
+
+      const r = state.responses[act.id] || {};
+      done.checked = !!r.done;
+      rating.value = r.rating ?? "";
+      interest.value = r.interest ?? "";
+      rating.disabled = !done.checked;
+
+      done.addEventListener("change", () => {
+        rating.disabled = !done.checked;
+        if (!done.checked) rating.value = "";
+        updateResponse(act.id, done, rating, interest);
+      });
+
+      rating.addEventListener("change", () => updateResponse(act.id, done, rating, interest));
+      interest.addEventListener("change", () => updateResponse(act.id, done, rating, interest));
+
+      row.append(done, rating, interest);
+      return row;
+    }
+
+    function updateResponse(id, done, rating, interest) {
+      state.responses[id] = {
+        done: done.checked,
+        rating: done.checked && rating.value ? Number(rating.value) : null,
+        interest: interest.value || null
+      };
+    }
+
+    /* ============================================================
+       UI HELPERS
+    ============================================================ */
+
+    document.getElementById("btn-save").addEventListener("click", saveResponses);
+    document.getElementById("btn-clear").addEventListener("click", clearResponses);
+
+    function setStatus(msg) {
+      document.getElementById("status").textContent = msg;
+    }
+  </script>
+</body>
+</html>

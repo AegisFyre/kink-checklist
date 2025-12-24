@@ -1,0 +1,28 @@
+[
+  {
+    "id": "power-authority",
+    "title": "Power & Authority",
+    "engine": "v1",
+    "schema": "pa-schema.json"
+  },
+  {
+   "id": "roleplay-identity-persona",
+   "title": "Roleplay, Identity, and Persona",
+   "engine": "v1",
+   "schema": "rip-schema.json"
+  },
+
+  {
+    "id": "bondage-restraint",
+    "title": "Bondage, Restraint, and Confinement",
+    "engine": "v1",
+    "schema": "br-schema.json"
+  },
+ {
+    "id": "care-dependency-daily-life-control",
+    "title": "Care, Dependency, and Daily Life Control",
+    "engine": "v1",
+    "schema": "cdlc-schema.json"
+  }
+  
+]

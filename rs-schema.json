@@ -1,0 +1,45 @@
+{
+  "id": "relationship-structure",
+  "categoryId": "relationship-structure",
+  "title": "Relationship Structure",
+  "version": "1.0",
+  "groups": [
+    {
+      "id": "core",
+      "title": "Core relationship models",
+      "options": [
+        { "id": "core.monogamy", "label": "Monogamy" },
+        { "id": "core.open", "label": "Open relationship" },
+        { "id": "core.polyamory", "label": "Polyamory" },
+        { "id": "core.relationship_anarchy", "label": "Relationship Anarchy" }
+      ]
+    },
+    {
+      "id": "scope",
+      "title": "Exclusivity & scope",
+      "options": [
+        { "id": "scope.sex_exclusive", "label": "Sexually exclusive" },
+        { "id": "scope.romance_exclusive", "label": "Romantically exclusive" },
+        { "id": "scope.no_exclusivity", "label": "No exclusivity expectations" }
+      ]
+    },
+    {
+      "id": "power",
+      "title": "Relationship power dynamic",
+      "options": [
+        { "id": "power.egalitarian", "label": "Egalitarian / no formal authority" },
+        { "id": "power.scene_only", "label": "Scene-only D/s" },
+        { "id": "power.tpe_24_7", "label": "24/7 power exchange (TPE)" }
+      ]
+    },
+    {
+      "id": "entanglement",
+      "title": "Commitment & entanglement",
+      "options": [
+        { "id": "entanglement.casual", "label": "Casual / low entanglement" },
+        { "id": "entanglement.nesting", "label": "Nesting / cohabitation" },
+        { "id": "entanglement.legal", "label": "Marriage / legal partnership" }
+      ]
+    }
+  ]
+}

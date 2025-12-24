@@ -1,0 +1,53 @@
+{
+  "id": "bondage-restraint",
+  "title": "Bondage, Restraint & Confinement",
+  "version": 1,
+  "groups": [
+    {
+      "id": "br-methods",
+      "label": "Restraint methods",
+      "activities": [
+        { "id": "br.method.rope", "label": "Rope bondage" },
+        { "id": "br.method.cuffs", "label": "Cuffs (metal, leather, Velcro)" },
+        { "id": "br.method.tape", "label": "Tape or plastic wrap" },
+        { "id": "br.method.fabric", "label": "Fabric restraints (scarves, ties)" },
+        { "id": "br.method.chain", "label": "Chain or heavy restraints" },
+        { "id": "br.method.harness", "label": "Body harnesses" },
+        { "id": "br.method.furniture", "label": "Immobilizing furniture (stocks, crosses)" }
+      ]
+    },
+    {
+      "id": "br-immobilization",
+      "label": "Degree of immobilization",
+      "activities": [
+        { "id": "br.immobile.partial", "label": "Partial restraint (one limb or loose binding)" },
+        { "id": "br.immobile.full", "label": "Full limb restraint" },
+        { "id": "br.immobile.extreme", "label": "Extreme positioning (hogtie, stress positions)" },
+        { "id": "br.immobile.adjustable", "label": "Immobilized but adjustable" },
+        { "id": "br.immobile.total", "label": "Completely immobile" }
+      ]
+    },
+    {
+      "id": "br-confinement",
+      "label": "Confinement & containment",
+      "activities": [
+        { "id": "br.conf.furniture", "label": "Tied or secured to furniture" },
+        { "id": "br.conf.enclosure", "label": "Enclosure (cage, crate, closet)" },
+        { "id": "br.conf.covered", "label": "Covered or enclosed spaces (blankets, wraps)" },
+        { "id": "br.conf.hooding", "label": "Hooding or sensory enclosure (non-breath restriction)" },
+        { "id": "br.conf.locked_room", "label": "Locked rooms (with agreed access protocols)" }
+      ]
+    },
+    {
+      "id": "br-duration",
+      "label": "Duration & conditions",
+      "activities": [
+        { "id": "br.duration.short", "label": "Short-term restraint (minutes)" },
+        { "id": "br.duration.scene", "label": "Extended scenes (1–2 hours)" },
+        { "id": "br.duration.long", "label": "Long-term restraint" },
+        { "id": "br.duration.sleep", "label": "Sleeping while restrained" },
+        { "id": "br.duration.unattended", "label": "Restrained while unattended (*please negotiate safety plans)" }
+      ]
+    }
+  ]
+}
