@@ -267,7 +267,12 @@
       state.currentSchema = await loadSchema(cat.schema);
       loadResponses();
 
-      renderV1(state.currentSchema);
+      if(cat.engine === "rs") {
+        renderRS(state.currentSchema);
+      } else {
+        renderV1(state.currentSchema);
+      }
+      
       setStatus("");
     }
 
@@ -310,8 +315,246 @@
     }
 
     /* =============================================
-       RENDERER (V1)
+       RENDERER 
     =================================================== */
+/* -------------------- RS (should not render;placeholder for later) --------------- */
+
+  
+
+const RS_STORAGE_KEY = "kink.renderRelationshipStructure.v1";
+
+  
+
+function renderRS(schema) {
+
+const root = document.getElementById("category-root");
+
+root.innerHTML = "";
+
+  
+
+const h2 = document.createElement("h2");
+
+h2.textContent = schema.title || "Relationship Structure";
+
+root.appendChild(h2);
+
+  
+
+const intro = document.createElement("p");
+
+intro.textContent = "Check the options you are comfortable with. Multiple selections may apply.";
+
+root.appendChild(intro);
+
+  
+
+const form = document.createElement("form");
+form.id = "rs-form";
+
+  
+const groups = Array.isArray(schema) ? schema : schema.groups;
+if (!Array.isArray(groups)) {
+
+const err = document.createElement("p");
+
+err.textContent = "RS schema error: expected schema.groups to be an array.";
+
+root.appendChild(err);
+
+return;
+
+}
+
+  
+ groups.forEach(group => {
+
+ const section = document.createElement("section");
+
+ section.className = "rs-group";
+
+  
+
+const h3 = document.createElement("h3");
+
+ h3.textContent = group.title || group.label || group.id;
+
+ section.appendChild(h3);
+
+  
+
+const opts = group.options || [];
+
+ opts.forEach(opt => {
+
+ const label = document.createElement("label");
+
+label.className = "rs-option";
+
+  
+
+ const cb = document.createElement("input");
+
+cb.type = "checkbox";
+
+cb.dataset.optionId = opt.id;
+
+  
+
+ const span = document.createElement("span");
+
+span.textContent = opt.label;
+
+  
+
+ label.appendChild(cb);
+
+label.appendChild(span);
+
+ section.appendChild(label);
+
+ });
+
+   form.appendChild(section);
+ });
+
+  
+ const controls = document.createElement("div");
+ controls.className = "rs-controls";
+
+  
+ const saveBtn = document.createElement("button");
+
+ saveBtn.type = "button";
+
+ saveBtn.id = "rs-save";
+
+saveBtn.textContent = "Save";
+
+  
+
+const clearBtn = document.createElement("button");
+ clearBtn.type = "button";
+
+clearBtn.id = "rs-clear";
+
+ clearBtn.textContent = "Clear";
+
+  
+
+ const status = document.createElement("span");
+
+ status.id = "rs-status";
+
+ status.setAttribute("aria-live", "polite");
+
+  
+
+ controls.appendChild(saveBtn);
+
+ controls.appendChild(clearBtn);
+
+ controls.appendChild(status);
+
+  
+
+ form.appendChild(controls);
+
+ root.appendChild(form);
+
+  
+
+ hydrateRSFromStorage();
+
+ wireRSButtons();
+
+}
+
+  
+
+function hydrateRSFromStorage() {
+
+ const raw = localStorage.getItem(RS_STORAGE_KEY);
+
+ const saved = raw ? JSON.parse(raw) : {};
+
+  
+
+ document.querySelectorAll('#category-root input[type="checkbox"][data-option-id]')
+
+.forEach(cb => {
+
+cb.checked = !!saved[cb.dataset.optionId];
+
+ });
+
+}
+
+  
+
+function collectRSSelections() {
+ const out = {};
+
+document.querySelectorAll('#category-root input[type="checkbox"][data-option-id]')
+
+.forEach(cb => {
+
+if (cb.checked) out[cb.dataset.optionId] = true;
+
+ });
+
+return out;
+
+}
+
+  
+
+function wireRSButtons() {
+
+const saveBtn = document.getElementById("rs-save");
+
+const clearBtn = document.getElementById("rs-clear");
+
+  
+ if (saveBtn) {
+
+saveBtn.onclick = () => {
+
+const selections = collectRSSelections();
+ localStorage.setItem(RS_STORAGE_KEY, JSON.stringify(selections));
+
+setRSStatus("Saved.");
+
+ };
+ }
+
+  
+
+if (clearBtn) {
+ clearBtn.onclick = () => {
+
+ document.querySelectorAll('#category-root input[type="checkbox"][data-option-id]')
+
+ .forEach(cb => (cb.checked = false));
+
+ localStorage.removeItem(RS_STORAGE_KEY);
+
+ setRSStatus("Cleared.");
+
+ };
+ }
+
+}
+
+  
+
+function setRSStatus(msg) {
+ const el = document.getElementById("rs-status");
+ if (el) el.textContent = msg;
+
+}
+
+  // -----V1 render ----
 
     function renderV1(schema) {
       const root = document.getElementById("category-root");
