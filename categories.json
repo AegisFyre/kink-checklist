@@ -1,11 +1,15 @@
 [
-   {
+
+  {
+
     "id": "relationship-structure",
     "title": "Relationship Structure",
-    "engine": "rs",
-    "schema": "rs-schema.json"
+    "engine":"rs",
+    "schema":"rs-schema.json"
+
   },
   {
+
     "id": "power-authority",
     "title": "Power & Authority",
     "engine": "v1",
@@ -24,13 +28,54 @@
     "engine": "v1",
     "schema": "br-schema.json"
   },
+
  {
     "id": "care-dependency-daily-life-control",
     "title": "Care, Dependency, and Daily Life Control",
     "engine": "v1",
     "schema": "cdlc-schema.json"
+  },
+
+  {
+    "id": "psych-sensory",
+    "title": "Psychological and Sensory Play",
+    "engine": "v1",
+    "schema": "psych-schema.json"
+  }, 
+
+  {
+    "id": "physical-sensation-pain",
+    "title": "Physical Sensation & Pain",
+    "engine": "v1",
+    "schema": "pain-schema.json"
+  },
+
+  {
+    "id": "body-appearance-objectification",
+    "title": "Body Appearance & Objectification",
+    "engine": "v1",
+    "schema": "bao-schema.json"
+  },
+
+  {
+    "id": "exposure-display-performance",
+    "title": "Exposure, Display & Performance",
+    "engine": "v1",
+    "schema": "edp-schema.json"
+  },
+
+  {
+    "id": "objects-tools-implements",
+    "title": "Objects, Tools & Implements",
+    "engine": "v1",
+    "schema": "oti-schema.json"
+  },
+
+  {
+    "id": "edge-risk-medical",
+    "title": "Edge, Risk & Medical-Adjacent Play",
+    "engine": "v1",
+    "schema": "edge-schema.json"
   }
   
 ]
-
-
