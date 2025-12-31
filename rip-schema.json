@@ -1,53 +1,62 @@
 {
-  "version": 1,
+  "categoryId": "roleplay-identity-persona",
   "title": "Roleplay, Identity & Persona",
+  "version": 1,
   "groups": [
     {
-      "id": "rp-styles",
-      "label": "Roleplay styles",
+      "id": "rip-roleplay-setup",
+      "title": "Roleplay setup & structure",
       "activities": [
-        { "id": "rp.scenario", "label": "Scenario-based roleplay (defined scenes)" },
-        { "id": "rp.improvised", "label": "Improvised/in-the-moment roleplay" },
-        { "id": "rp.textual", "label": "Text or written roleplay" },
-        { "id": "rp.costume", "label": "Costumes or visual presentation" }
+        { "id": "rip.setup.in_character", "label": "In-character dialogue (staying in role)" },
+        { "id": "rip.setup.scenes", "label": "Planned scenes (scripted or semi-scripted)" },
+        { "id": "rip.setup.improv", "label": "Improvised roleplay (in the moment)" },
+        { "id": "rip.setup.costumes", "label": "Costumes, props, or outfits to support role" },
+        { "id": "rip.setup.locations", "label": "Roleplay in a specific setting (hotel, outdoors, etc.)" },
+        { "id": "rip.setup.texting", "label": "Roleplay via text/chat (between meets)" }
       ]
     },
     {
-      "id": "identity-adoption",
-      "label": "Identity adoption",
+      "id": "rip-archetypes",
+      "title": "Archetypes & personas",
       "activities": [
-        { "id": "id.titles", "label": "Using titles or names during roleplay" },
-        { "id": "id.gender_play", "label": "Gender role or gender expression play" },
-        { "id": "id.age_play", "label": "Age-based roles" },
-        { "id": "id.species", "label": "Animal, creature, or non-human personas" }
+        { "id": "rip.archetype.authority", "label": "Authority figure (boss/teacher/officer/etc.)" },
+        { "id": "rip.archetype.caregiver", "label": "Caregiver/little dynamic (non-sexual elements allowed)" },
+        { "id": "rip.archetype.pet", "label": "Petplay persona (puppy/kitten/pony/etc.)" },
+        { "id": "rip.archetype.service", "label": "Service persona (butler/maid/attendant)" },
+        { "id": "rip.archetype.captive", "label": "Captive/prisoner persona (fantasy framing)" },
+        { "id": "rip.archetype.monster", "label": "Monster/creature persona (vampire, demon, etc.)" }
       ]
     },
     {
-      "id": "persona-persistence",
-      "label": "Persona persistence",
+      "id": "rip-power-fantasy",
+      "title": "Power-fantasy roleplay",
       "activities": [
-        { "id": "pp.scene_only", "label": "Persona exists only during scenes" },
-        { "id": "pp.session", "label": "Persona persists for a session or day" },
-        { "id": "pp.long_term", "label": "Ongoing or long-term persona" }
+        { "id": "rip.fantasy.consent_noncon", "label": "Consensual non-consent roleplay (CNC)" },
+        { "id": "rip.fantasy.predator_prey", "label": "Predator/prey or chase dynamic" },
+        { "id": "rip.fantasy.interrogation", "label": "Interrogation or coercive ‘pressure’ roleplay (consensual)" },
+        { "id": "rip.fantasy_humiliation", "label": "Humiliation roleplay (consensual, negotiated)" },
+        { "id": "rip.fantasy_abduction", "label": "Abduction/kidnapping fantasy (fully consensual)" }
       ]
     },
     {
-      "id": "fantasy-themes",
-      "label": "Fantasy themes",
+      "id": "rip-language-identity",
+      "title": "Names, language & identity play",
       "activities": [
-        { "id": "ft.power_fantasy", "label": "Power or authority fantasy" },
-        { "id": "ft.rescue", "label": "Rescue or protection narratives" },
-        { "id": "ft.corruption", "label": "Corruption or temptation themes" },
-        { "id": "ft.domestic", "label": "Domestic or everyday-life fantasy" }
+        { "id": "rip.identity.assigned_names", "label": "Assigned names or scene-names" },
+        { "id": "rip.identity.pronouns", "label": "Pronouns as part of play (requested/assigned)" },
+        { "id": "rip.identity.honorifics", "label": "Roleplay titles (as character, not power dynamic)" },
+        { "id": "rip.identity.third_person", "label": "Speaking in third person (as part of role)" },
+        { "id": "rip.identity.voice", "label": "Voice/affect changes (accent, tone, character voice)" }
       ]
     },
     {
-      "id": "reality-boundaries",
-      "label": "Reality vs fiction boundaries",
+      "id": "rip-worldbuilding",
+      "title": "Worldbuilding & ongoing narrative",
       "activities": [
-        { "id": "rb.clear_out", "label": "Clear scene start/end and debrief" },
-        { "id": "rb.soft_bleed", "label": "Some emotional bleed allowed" },
-        { "id": "rb.no_bleed", "label": "Strict separation from real identity" }
+        { "id": "rip.story.ongoing_chars", "label": "Ongoing characters across sessions" },
+        { "id": "rip.story.relationship", "label": "In-character relationship (dating/marriage/bond)" },
+        { "id": "rip.story_rules", "label": "In-world rules/lore (i.e., a setting with constraints)" },
+        { "id": "rip.story.missions", "label": "Missions/quests/tasks within roleplay" }
       ]
     }
   ]
