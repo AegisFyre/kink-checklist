@@ -1,11 +1,11 @@
 {
-  "id": "bondage-restraint",
+  "categoryId": "bondage-restraint",
   "title": "Bondage, Restraint & Confinement",
   "version": 1,
   "groups": [
     {
       "id": "br-methods",
-      "label": "Restraint methods",
+      "title": "Restraint methods",
       "activities": [
         { "id": "br.method.rope", "label": "Rope bondage" },
         { "id": "br.method.cuffs", "label": "Cuffs (metal, leather, Velcro)" },
@@ -13,23 +13,23 @@
         { "id": "br.method.fabric", "label": "Fabric restraints (scarves, ties)" },
         { "id": "br.method.chain", "label": "Chain or heavy restraints" },
         { "id": "br.method.harness", "label": "Body harnesses" },
-        { "id": "br.method.furniture", "label": "Immobilizing furniture (stocks, crosses)" }
+        { "id": "br.method.furniture", "label": "Immobilising furniture (stocks, crosses)" }
       ]
     },
     {
-      "id": "br-immobilization",
-      "label": "Degree of immobilization",
+      "id": "br-immobilisation",
+      "title": "Degree of immobilisation",
       "activities": [
         { "id": "br.immobile.partial", "label": "Partial restraint (one limb or loose binding)" },
         { "id": "br.immobile.full", "label": "Full limb restraint" },
         { "id": "br.immobile.extreme", "label": "Extreme positioning (hogtie, stress positions)" },
-        { "id": "br.immobile.adjustable", "label": "Immobilized but adjustable" },
+        { "id": "br.immobile.adjustable", "label": "Immobilised but adjustable" },
         { "id": "br.immobile.total", "label": "Completely immobile" }
       ]
     },
     {
       "id": "br-confinement",
-      "label": "Confinement & containment",
+      "title": "Confinement & containment",
       "activities": [
         { "id": "br.conf.furniture", "label": "Tied or secured to furniture" },
         { "id": "br.conf.enclosure", "label": "Enclosure (cage, crate, closet)" },
@@ -40,7 +40,7 @@
     },
     {
       "id": "br-duration",
-      "label": "Duration & conditions",
+      "title": "Duration & conditions",
       "activities": [
         { "id": "br.duration.short", "label": "Short-term restraint (minutes)" },
         { "id": "br.duration.scene", "label": "Extended scenes (1–2 hours)" },
