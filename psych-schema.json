@@ -1,0 +1,67 @@
+{
+  "categoryId": "psych-sensory",
+  "title": "Psychological & Sensory Play",
+  "version": 1,
+  "groups": [
+    {
+      "id": "ps-mind-attention",
+      "title": "Mind & attention",
+      "activities": [
+        { "id": "ps.mind.anticipation", "label": "Anticipation/slow build (prolonging tension)" },
+        { "id": "ps.mind.denial_teasing", "label": "Denial/teasing (\"not yet\")" },
+        { "id": "ps.mind.controlled_frustration", "label": "Controlled frustration (kept wanting/unfinished)" },
+        { "id": "ps.mind.focus_tasks", "label": "Focus tasks (counting, holding position, staying still)" },
+        { "id": "ps.mind.meditative_presence", "label": "Meditative presence (quiet, grounded, low stimulation)" },
+        { "id": "ps.mind_attention_control", "label": "Attention control (\"look at me\", \"listen\", \"follow my voice\")" }
+      ]
+    },
+    {
+      "id": "ps-perception-language",
+      "title": "Power through perception (language & framing)",
+      "activities": [
+        { "id": "ps.perception.praise", "label": "Praise/affirmation (earned approval)" },
+        { "id": "ps.perception.teasing_mockery", "label": "Teasing/light mockery (playful, non-cruel)" },
+        { "id": "ps.perception.degradation", "label": "Degradation/humiliation language (consensual, negotiated)" },
+        { "id": "ps.perception.object_labels", "label": "Labeling (\"good girl\", \"pet\", \"toy\", etc.)" },
+        { "id": "ps.perception.gaslight_roleplay", "label": "Reality-bending roleplay (\"you can't resist\", \"this is inevitable\")" },
+        { "id": "ps.perception.confession", "label": "Confession/admissions (saying wants, \"truth telling\")" }
+      ]
+    },
+    {
+      "id": "ps-fear-suspense",
+      "title": "Fear & suspense (controlled)",
+      "activities": [
+        { "id": "ps.fear.surprise", "label": "Surprise/unpredictability (unknown sequence)" },
+        { "id": "ps.fear.startle", "label": "Startle (sudden voice, sudden presence)" },
+        { "id": "ps.fear.chase_catch", "label": "Chase/capture (consensual pursuit)" },
+        { "id": "ps.fear.predator_prey", "label": "Predator/prey roleplay (hunted/hunting vibe)" },
+        { "id": "ps.fear.threat_talk", "label": "Threatening speech (\"if you don't…, then…\")" },
+        { "id": "ps.fear.countdown", "label": "Countdowns/timed suspense (\"in 10…\")" }
+      ]
+    },
+    {
+      "id": "ps-sensory-modulation",
+      "title": "Sensory modulation (non-pain)",
+      "activities": [
+        { "id": "ps.sensory.blindfold", "label": "Blindfold/remove or reduce vision" },
+        { "id": "ps.sensory.noise", "label": "Noise/sound control (music, silence, earplugs, headphones)" },
+        { "id": "ps.sensory.voice", "label": "Voice play (tone, commands, whispering, ASMR-style)" },
+        { "id": "ps.sensory.temperature_mild", "label": "Temperature play (mild: warm/cool)" },
+        { "id": "ps.sensory.texture", "label": "Texture play (feathers, silk, brushes, fur, etc.)" },
+        { "id": "ps.sensory_scent", "label": "Scent play (perfume, oils, familiar scents)" }
+      ]
+    },
+    {
+      "id": "ps-headspace",
+      "title": "Headspace & altered state (non-substance: see substance in edgeplay)",
+      "activities": [
+        { "id": "ps.headspace.subspace", "label": "Subspace" },
+        { "id": "ps.headspace_topspace", "label": "Topspace/Dom Space" },
+        { "id": "ps.headspace.little", "label": "Little space (specify in notes" },
+        { "id": "ps.headspace.petspace", "label": "Pet space (specify in notes)" },
+        { "id": "ps.headspace.trance", "label": "Trance/guided headspace (breath + voice + focus)" },
+        { "id": "ps.headspace.afterglow", "label": "Afterglow (soft, bonded, emotionally open)" }
+      ]
+    }
+  ]
+}
