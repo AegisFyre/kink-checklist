@@ -1,0 +1,70 @@
+{
+  "categoryId": "edge-risk-medical",
+  "title": "Edge, Risk & Medical-Adjacent Play",
+  "version": 1,
+  "groups": [
+    {
+      "id": "edge-bodily-harm",
+      "title": "Bodily harm & injury risk",
+      "activities": [
+        { "id": "edge.harm.blood", "label": "Blood play (intentional bleeding)" },
+        { "id": "edge.harm.menstrual", "label": "Blood play (menstrual)"},
+        { "id": "edge.harm.faux_cutting", "label": "Fake/appearance of cutting (any method)" },
+        { "id": "edge.harm.cutting", "label": "Cutting/skin breaking (any method)" },
+        { "id": "edge.harm.scarring", "label": "Scarring/permanent marks" },
+        { "id": "edge.harm.burning", "label": "Burning/fire play (wax, flame, heat injury)" },
+        { "id": "edge.harm.wound_care", "label": "Wound care as part of play" }
+      ]
+    },
+    {
+      "id": "edge-breath-airway",
+      "title": "Breath & airway restriction",
+      "activities": [
+        { "id": "edge.breath.choking", "label": "Choking/strangulation" },
+        { "id": "edge.breath.smothering", "label": "Smothering / covering mouth or nose" },
+        { "id": "edge.breath.breath_control", "label": "Breath control / pacing" },
+        { "id": "edge.breath.bag", "label": "Bagging/enclosed air restriction" }
+      ]
+    },
+    {
+      "id": "edge-electrical-temperature",
+      "title": "Electrical & extreme temperature",
+      "activities": [
+        { "id": "edge.electric.play", "label": "Electrical play (e-stim, shocks)" },
+        { "id": "edge.temp.extreme_heat", "label": "Extreme heat exposure" },
+        { "id": "edge.temp.extreme_cold", "label": "Extreme cold exposure" }
+      ]
+    },
+    {
+      "id": "edge-medical-framing",
+      "title": "Medical & clinical framing",
+      "activities": [
+        { "id": "edge.med.needles", "label": "Needles/injections/puncture play" },
+        { "id": "edge.med.catheters", "label": "Catheters or internal medical devices" },
+        { "id": "edge.med.exams", "label": "Medical exams/procedures roleplay (invasive)" },
+        { "id": "edge.med.restraints", "label": "Medical restraints/immobilization" },
+        { "id": "edge.med.hygiene", "label": "Medical hygiene or sanitation rituals" }
+      ]
+    },
+    {
+      "id": "edge-altered-states",
+      "title": "Altered states & capacity",
+      "activities": [
+        { "id": "edge.state.intoxication", "label": "Intoxication as part of play" },
+        { "id": "edge.state.sleep", "label": "Sleep/unconsciousness play" },
+        { "id": "edge.state.deprivation", "label": "Extended deprivation (sleep, food, water)" },
+        { "id": "edge.state.overwhelm", "label": "Pushing beyond normal physical limits" }
+      ]
+    },
+    {
+      "id": "edge-consent-boundaries",
+      "title": "Consent stressors",
+      "activities": [
+        { "id": "edge.consent.no_safeword", "label": "Scenes without safewords" },
+        { "id": "edge.consent.resistance", "label": "Resistance/consensual non-consent frameworks" },
+        { "id": "edge.consent.unpredictable", "label": "Unpredictable or open-ended scenes (mindfuckery)" },
+        { "id": "edge.consent.memory_gap", "label": "Memory gaps or dissociation risk" }
+      ]
+    }
+  ]
+}
