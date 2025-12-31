@@ -1,0 +1,62 @@
+{
+  "categoryId": "exposure-display-performance",
+  "title": "Exposure, Display & Performance",
+  "version": 1,
+  "groups": [
+    {
+      "id": "exp-private-observation",
+      "title": "Private observation",
+      "activities": [
+        { "id": "exp.private.watching", "label": "Being watched by partner (no participation)" },
+        { "id": "exp.private.directed_display", "label": "Directed display (told how/what to show)" },
+        { "id": "exp.private.performance", "label": "Performing actions for partner's viewing" },
+        { "id": "exp.private.one_way", "label": "One-way observation (voyeuristic setup)" },
+        { "id": "exp.private.hidden_watcher", "label": "Partner watching without immediate visibility" }
+      ]
+    },
+    {
+      "id": "exp-recording",
+      "title": "Recording & documentation",
+      "activities": [
+        { "id": "exp.recording.photos", "label": "Photos for partner/self" },
+        { "id": "exp.recording.video", "label": "Video recording for partner/self" },
+        { "id": "exp.recording.audio", "label": "Audio recording for partner/self (voice, sounds)" },
+        { "id": "exp.recording.review", "label": "Reviewing recordings together" },
+        { "id": "exp.recording.kept_by_partner", "label": "Partner keeps recordings (ownership/control aspect)" }
+      ]
+    },
+    {
+      "id": "exp-third-party-presence",
+      "title": "Third-party presence (non-participating)",
+      "activities": [
+        { "id": "exp.third.witness", "label": "Being witnessed by others (no interaction)" },
+        { "id": "exp.third.directed_performance", "label": "Performing while others watch (directed)" },
+        { "id": "exp.third.blind_presence", "label": "Others present but unable to see clearly" },
+        { "id": "exp.third.audience_awareness", "label": "Knowing others are watching without seeing them" },
+        { "id": "exp.third.photos", "label": "Photos shared with third party" },
+        { "id": "exp.third.video", "label": "Video shared with third party" },
+        { "id": "exp.third.audio", "label": "Audio recording shared with third party" }
+      ]
+    },
+    {
+      "id": "exp-public-context",
+      "title": "Public or semi-public context",
+      "activities": [
+        { "id": "exp.public.risk_visibility", "label": "Risk of being seen (not guaranteed)" },
+        { "id": "exp.public.intentional_visibility", "label": "Intentional visibility to others" },
+        { "id": "exp.public.exhibitionism", "label": "Exhibitionism (being seen as a goal)" },
+        { "id": "exp.public.performance_role", "label": "Performative role in public spaces" }
+      ]
+    },
+    {
+      "id": "exp-performance-meaning",
+      "title": "Performance meaning & framing",
+      "activities": [
+        { "id": "exp.meaning.pleasing", "label": "Performing to please partner" },
+        { "id": "exp.meaning.humiliation", "label": "Performance as humiliation" },
+        { "id": "exp.meaning.pride", "label": "Performance as pride / showing off" },
+        { "id": "exp.meaning.service", "label": "Performance as service or duty" }
+      ]
+    }
+  ]
+}
