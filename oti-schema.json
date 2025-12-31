@@ -1,0 +1,61 @@
+{
+  "categoryId": "objects-tools-implements",
+  "title": "Objects, Tools & Implements",
+  "version": 1,
+  "groups": [
+    {
+      "id": "obj-restraint-implements",
+      "title": "Restraint & positioning implements",
+      "activities": [
+        { "id": "obj.restraint.rope", "label": "Rope (any material)" },
+        { "id": "obj.restraint.cuffs", "label": "Cuffs (metal, leather, Velcro)" },
+        { "id": "obj.restraint.tape", "label": "Tape or plastic wrap" },
+        { "id": "obj.restraint.harness", "label": "Harnesses or body straps" },
+        { "id": "obj.restraint.furniture", "label": "Furniture (stocks, benches, frames)" },
+        { "id": "obj.restraint.chains", "label": "Chains"}
+      ]
+    },
+    {
+      "id": "obj-impact-tools",
+      "title": "Impact & striking tools",
+      "activities": [
+        { "id": "obj.impact.paddle", "label": "Paddles" },
+        { "id": "obj.impact.crop", "label": "Riding crops" },
+        { "id": "obj.impact.flogger", "label": "Floggers/whips" },
+        { "id": "obj.impact.cane", "label": "Canes/rigid implements" },
+        { "id": "obj.impact.improvised", "label": "Improvised household items (comment in notes)" }
+      ]
+    },
+    {
+      "id": "obj-sensory-tools",
+      "title": "Sensory tools",
+      "activities": [
+        { "id": "obj.sensory.blindfold", "label": "Blindfolds/vision blockers" },
+        { "id": "obj.sensory.ear", "label": "Earplugs/headphones" },
+        { "id": "obj.sensory.feather", "label": "Light touch tools (feathers, brushes)" },
+        { "id": "obj.sensory.texture", "label": "Texture tools (fur, silk, leather)" },
+        { "id": "obj.sensory.scent", "label": "Scent tools (oils, perfumes)" }
+      ]
+    },
+    {
+      "id": "obj-symbolic-items",
+      "title": "Symbolic & aesthetic items",
+      "activities": [
+        { "id": "obj.symbolic.collar", "label": "Collars/symbolic markers" },
+        { "id": "obj.symbolic.tags", "label": "Name tags/ownership symbols" },
+        { "id": "obj.symbolic.clothing", "label": "Specific clothing or uniforms" },
+        { "id": "obj.symbolic.jewelry", "label": "Jewelry with scene or role meaning" }
+      ]
+    },
+    {
+      "id": "obj-control-devices",
+      "title": "Control & enforcement devices",
+      "activities": [
+        { "id": "obj.control.gags", "label": "Gags (any type)" },
+        { "id": "obj.control.leashes", "label": "Leashes/leads" },
+        { "id": "obj.control.timers", "label": "Timers/alarms" },
+        { "id": "obj.control.remote", "label": "Remote-controlled devices" }
+      ]
+    }
+  ]
+}
