@@ -121,7 +121,7 @@
 .activity-header,
 .activity{
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) 84px 110px 180px minmax(220px, 1fr);
+  grid-template-columns: minmax(260px, 1fr) 84px 110px 180px 200px minmax(220px, 1fr);
   gap: 0.6rem;
   align-items: center;
 }
@@ -338,6 +338,24 @@ function getProfiles() {
       ["yes", "Yes"],
       ["fetish_need", "Fetish/core need"]
     ];
+
+    const DIRECTION_OPTIONS = [
+      ["", "—"],
+      ["receive", "Want it done to me"],
+      ["give", "Want to do it to them"],
+      ["both", "Both / switch"],
+      ["unsure", "Not sure / depends"]
+    ];
+
+    function directionLabel(v){
+      return ({
+        receive: "Done to me",
+        give: "I do it",
+        both: "Both",
+        unsure: "Depends",
+        "": "—"
+  })[v] || "—";
+}
 
     // ============================================================
 // INTEREST RANKING + COMPARISON HELPERS
@@ -682,6 +700,8 @@ function hydrateRSFromStorage() {
 
  const saved = raw ? JSON.parse(raw) : {};
 
+ direction.value = r.direction ?? "";
+
   
 
  document.querySelectorAll('#category-root input[type="checkbox"][data-option-id]')
@@ -805,6 +825,7 @@ schema.groups.forEach(group => {
     <div class="h-center">Tried</div>
     <div>Enjoyment</div>
     <div>Interest</div>
+    <div>Direction</div>
     <div>Notes</div>
   `;
   content.appendChild(header);
@@ -847,6 +868,18 @@ schema.groups.forEach(group => {
         `<option value="">—</option>` +
         INTEREST_OPTIONS.map(([v, t]) => `<option value="${v}">${t}</option>`).join("");
 
+      // DIRECTION
+      const direction = document.createElement("select");
+      direction.setAttribute("aria-label", `${act.label}: direction`);
+      direction.innerHTML = `
+        <option value="">—</option>
+        <option value="receive">Done to me</option>
+        <option value="give">I do it to someone</option>
+        <option value="both">Both/switch</option>
+        <option value="na">Not applicable</option>
+`;
+
+
       // NOTES
       const notes = document.createElement("textarea");
       notes.setAttribute("aria-label", `${act.label}: notes`);
@@ -862,23 +895,25 @@ schema.groups.forEach(group => {
       done.addEventListener("change", () => {
         rating.disabled = !done.checked;
         if (!done.checked) rating.value = "";
-        updateResponse(act.id, done, rating, interest, notes);
+        updateResponse(act.id, done, rating, interest, direction, notes);
       });
 
-      rating.addEventListener("change", () => updateResponse(act.id, done, rating, interest, notes));
-      interest.addEventListener("change", () => updateResponse(act.id, done, rating, interest, notes));
-      notes.addEventListener("input", () => updateResponse(act.id, done,rating, interest, notes));
+      rating.addEventListener("change", () => updateResponse(act.id, done, rating, interest, direction, notes));
+      interest.addEventListener("change", () => updateResponse(act.id, done, rating, interest, direction, notes));
+      direction.addEventListener("change", () => updateResponse(act.id, done, rating, interest, direction, notes))
+      notes.addEventListener("input", () => updateResponse(act.id, done,rating, interest, direction, notes));
 
-      row.append(done, rating, interest, notes);
+      row.append(done, rating, interest, direction, notes);
       return row;
     }
 
-function updateResponse(id, done, rating, interest, notesEl) {
+function updateResponse(id, done, rating, interest, direction, notesEl) {
   const prev = state.responses[id] || {};
   state.responses[id] = {
     done: done.checked,
     rating: done.checked && rating.value ? Number(rating.value) : null,
     interest: interest.value || "maybe",
+    direction: direction?.value || "",
     notes: (notesEl?.value ?? prev.notes ?? "").trim()
   };
 }
@@ -932,7 +967,7 @@ document.getElementById("profile-select").addEventListener("change", (e) => {
 });
 
 document.getElementById("btn-add-profile").addEventListener("click", () => {
-  const name = prompt("New profile name (e.g., Alex):");
+  const name = prompt("New profile name (e.g., Partner's Name):");
   if (!name) return;
 
   const id = name.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
