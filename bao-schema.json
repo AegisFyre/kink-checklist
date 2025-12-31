@@ -1,0 +1,60 @@
+{
+  "categoryId": "body-appearance-objectification",
+  "title": "Body, Appearance & Objectification",
+  "version": 1,
+  "groups": [
+    {
+      "id": "body-attention",
+      "title": "Attention to body & appearance",
+      "activities": [
+        { "id": "body.attention.gazing", "label": "Extended looking/visual focus on the body" },
+        { "id": "body.attention.inspection", "label": "Inspection (checking, positioning, directing how to stand/sit)" },
+        { "id": "body.attention.comparison", "label": "Comparison (to ideals, roles, or others' bodies)" },
+        { "id": "body.attention.display_private", "label": "Private display for partner (posing, showing off)" },
+        { "id": "body.attention.mirroring", "label": "Mirrors/watching oneself be watched" }
+      ]
+    },
+    {
+      "id": "body-presentation",
+      "title": "Body presentation & styling",
+      "activities": [
+        { "id": "body.presentation.clothing_control", "label": "Clothing control (what is worn or removed)" },
+        { "id": "body.presentation.costume", "label": "Costumes/aesthetic roles" },
+        { "id": "body.presentation.grooming", "label": "Grooming expectations (hair, nails, makeup, shaving)" },
+        { "id": "body.presentation.accessories", "label": "Accessories (collars, heels, lingerie, symbolic items)" },
+        { "id": "body.presentation.posture", "label": "Posture & movement control (how to walk, kneel, pose)" }
+      ]
+    },
+    {
+      "id": "objectification-language",
+      "title": "Objectification & ownership language",
+      "activities": [
+        { "id": "body.object.language", "label": "Objectifying language (\"thing\", \"toy\", \"use\")" },
+        { "id": "body.object.possession", "label": "Possession framing (\"mine\", \"owned\", \"belongs to\")" },
+        { "id": "body.object.utility", "label": "Utility framing (body as tool or function)" },
+        { "id": "body.object.naming", "label": "Renaming / labeling the body or parts" },
+        { "id": "body.object.dehumanization", "label": "Dehumanization play" }
+      ]
+    },
+    {
+      "id": "body-control",
+      "title": "Control over the body",
+      "activities": [
+        { "id": "body.control.positioning", "label": "Manual positioning/arranging the body" },
+        { "id": "body.control.stillness", "label": "Required stillness/being posed" },
+        { "id": "body.control.use_permission", "label": "Permission required to touch or move" },
+        { "id": "body.control.denial", "label": "Denial of touch or movement" }
+      ]
+    },
+    {
+      "id": "body-identity-separation",
+      "title": "Identity separation & abstraction",
+      "activities": [
+        { "id": "body.identity.part_focus", "label": "Focusing on body parts rather than the whole person" },
+        { "id": "body.identity.role_body", "label": "Body as role-symbol (not self)" },
+        { "id": "body.identity.anonymity", "label": "Anonymity/face ignored or covered (private context)" },
+        { "id": "body.identity.object_state", "label": "Temporary object-state (treated as furniture, art, etc.)" }
+      ]
+    }
+  ]
+}
