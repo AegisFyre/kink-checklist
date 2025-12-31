@@ -1,0 +1,62 @@
+{
+  "categoryId": "physical-sensation-pain",
+  "title": "Physical Sensation & Pain",
+  "version": 1,
+  "groups": [
+    {
+      "id": "pain-impact",
+      "title": "Impact play",
+      "activities": [
+        { "id": "pain.impact.hand", "label": "Hand spanking" },
+        { "id": "pain.impact.paddle", "label": "Paddles" },
+        { "id": "pain.impact.crop", "label": "Riding crop" },
+        { "id": "pain.impact.whip", "label": "Whips/floggers" },
+        { "id": "pain.impact.cane", "label": "Caning" },
+        { "id": "pain.impact.targeted", "label": "Targeted strikes (specific areas, comment in notes)" }
+      ]
+    },
+    {
+      "id": "pain-intensity-style",
+      "title": "Pain style & intensity",
+      "activities": [
+        { "id": "pain.style.sharp", "label": "Sharp/stingy pain" },
+        { "id": "pain.style.thuddy", "label": "Deep/thuddy pain" },
+        { "id": "pain.style.burning", "label": "Burning sensation" },
+        { "id": "pain.style.building", "label": "Slowly escalating intensity" },
+        { "id": "pain.style.peaks", "label": "High-intensity peaks" },
+        { "id": "pain.style.endurance", "label": "Endurance pain (long duration)" }
+      ]
+    },
+    {
+      "id": "pain-surface",
+      "title": "Surface & skin sensation",
+      "activities": [
+        { "id": "pain.surface.scratching", "label": "Scratching/raking nails" },
+        { "id": "pain.surface.pinch", "label": "Pinching" },
+        { "id": "pain.surface.skin_sensitivity", "label": "Heightened skin sensitivity (overstimulating touch)" },
+        { "id": "pain.surface.repeated_touch", "label": "Repeated contact on the same area" }
+      ]
+    },
+    {
+      "id": "pain-muscle-stress",
+      "title": "Muscle stress & exertion",
+      "activities": [
+        { "id": "pain.muscle.holding_positions", "label": "Holding uncomfortable positions" },
+        { "id": "pain.muscle.wall_sit", "label": "Wall sits/squats/static exertion" },
+        { "id": "pain.muscle.repetition", "label": "Repetitive physical tasks" },
+        { "id": "pain.muscle.fatigue", "label": "Working through muscle fatigue" }
+      ]
+    },
+    {
+      "id": "pain-emotional-context",
+      "title": "Pain & emotional context",
+      "activities": [
+        { "id": "pain.context.punishment", "label": "Punishment framing" },
+        { "id": "pain.context.challenge", "label": "Challenge/testing limits" },
+        { "id": "pain.context.reward", "label": "Pain as a gateway to reward/affection" },
+        { "id": "pain.context.service", "label": "Pain in service of pleasing partner" },
+        { "id": "pain.context.catharsis", "label": "Cathartic pain (release/emotional reset)" }
+      ]
+    }
+  ]
+}
