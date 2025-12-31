@@ -6,164 +6,248 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    :root {
-      --border: #d7d7d7;
-      --muted: #666;
-      --bg-soft: #fafafa;
+    :root{
+      --bg: #f2f4f3;
+      --panel: #f7f9f8;
+      --border: #cfd6dc;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2f6f6d;
+      --accent-2: #1f4d4b;
+      --soft: #eef2f6;
     }
 
-    body {
-      font-family: system-ui, sans-serif;
+    * { box-sizing: border-box; }
+
+    body{
       margin: 0;
-      padding: 0;
-      background: #fff;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    header {
+    header{
       padding: 1rem;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
     }
 
-    header h1 {
-      margin: 0 0 0.5rem 0;
+    header h1{
+      margin: 0 0 0.75rem 0;
+      font-size: 1.25rem;
     }
 
-    nav button {
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
+    nav{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
 
-      padding: 0.45rem 0.65rem;
+    nav button{
+      padding: 0.5rem 0.75rem;
       border: 1px solid var(--border);
-      background: white;
-      border-radius: 8px;
+      background: var(--panel);
+      border-radius: 10px;
       cursor: pointer;
+      color: var(--text);
     }
 
-    nav button:hover {
-      background: var(--bg-soft);
+    nav button:hover{
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #1f4d4b;
     }
 
-    nav button[aria-current="page"] {
-      border-color: #999;
-      background: var(--bg-soft);
-      font-weight: 600;
+    nav button:focus-visible{
+      outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      outline-offset: 2px;
+    }
+
+
+    nav button.active{
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
     }
 
     main {
       padding: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    h2 {
-      margin: 0 0 0.75rem 0;
-    }
+/* ---------- Collapsible groups ---------- */
 
-    .group {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: white;
-    }
+.group{
+  margin: 0 0 0.75rem 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--panel);
+  overflow: clip;
+}
 
-    .group h3 {
-      margin: 0 0 0.75rem 0;
-    }
+.group summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: linear-gradient(to bottom, #fff, #fbfcfe);
+}
 
-    .v1-header {
-      display: grid;
-      grid-template-columns: 2fr repeat(3, auto);
-      gap: 0.5rem;
-      align-items: end;
+.group summary::-webkit-details-marker{ display: none; }
 
-      padding: 0.25rem 0 0.5rem 0;
-      color: var(--muted);
+.group summary .meta{
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.group[open] summary{
+  border-bottom: 1px solid var(--border);
+  background: var(--soft);
+}
+
+.group-content{
+  padding: 0.75rem 1rem 1rem 1rem;
+}
+
+/* ---------- Grid + alignment  ---------- */
+
+.activity-header,
+.activity{
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 84px 110px 180px minmax(220px, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.activity-header{
+  padding: 0.5rem 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 650;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.5rem;
+}
+
+.activity-header > div{
+  text-align: left; 
+}
+
+.activity-header .h-center{
+  text-align: center;
+}
+
+.activity{
+  padding: 0.35rem 0;
+}
+
+.activity .label{
+  line-height: 1.25;
+}
+
+.activity input[type="checkbox"]{
+  justify-self: center;
+  width: 18px;
+  height: 18px;
+}
+
+.activity select{
+  width: 100%;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  color: var(--text);
+}
+
+.activity select:focus{
+  outline: 2px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 1px;
+}
+
+.activity textarea{
+  width: 100%;
+  min-height: 2.25rem;
+  resize: vertical;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: inherit;
+  color: var(--text);
+  background: white;
+}
+
+.activity textarea:focus{
+  outline: 2px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 1px;
+}
+
+.note-block{
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.55rem;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+.note-block .note-label{
+  font-weight: 650;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.note-clamp{
+  max-height: 4.5rem; /* ~3 lines */
+  overflow: hidden;
+  position: relative;
+}
+
+.note-toggle{
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+}
+
+/* Small screens: stack fields */
+@media (max-width: 820px){
+  .activity-header{
+    display: none;
+  }
+  .activity{
+    grid-template-columns: 1fr;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .activity input[type="checkbox"]{
+    justify-self: start;
+  }
+}
+  .header-panel{
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header-panel select,
+  .header-panel button{
       font-size: 0.9rem;
-      border-bottom: 1px solid #eee;
-      margin-bottom: 0.35rem;
-    }
+  }
 
-    .v1-header div:nth-child(1) {
-      font-weight: 600;
-      color: #111;
-    }
-
-    .activity {
-      display: grid;
-      grid-template-columns: 2fr repeat(3, auto);
-      gap: 0.5rem;
-      align-items: center;
-
-      padding: 0.35rem 0;
-      border-top: 1px solid #eee;
-    }
-
-    .activity:first-of-type {
-      border-top: 0;
-    }
-
-    .activity .label {
-      line-height: 1.25;
-    }
-
-    .activity input[type="checkbox"] {
-      width: 18px;
-      height: 18px;
-    }
-
-    select {
-      min-width: 9rem;
-      padding: 0.4rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: white;
-    }
-
-    select:disabled {
-      opacity: 0.55;
-      background: #f3f3f3;
-    }
-
-    .controls {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .controls button {
-      padding: 0.55rem 0.8rem;
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .controls button:hover {
-      background: var(--bg-soft);
-    }
-
-    .status {
-      margin-left: 1rem;
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    @media (max-width: 680px) {
-      .activity,
-      .v1-header {
-        grid-template-columns: 1fr;
-      }
-
-      select {
-        width: 100%;
-        min-width: 0;
-      }
-
-      .activity input[type="checkbox"] {
-        justify-self: start;
-      }
-    }
   </style>
 </head>
 
@@ -171,6 +255,21 @@
   <header>
     <h1>Kink Compatibility Checklist</h1>
     <nav id="category-nav"></nav>
+
+    <div id="profile-panel" style="margin-bottom:1rem;">
+      <strong>Editing profile:</strong>
+      <select id="profile-select"></select>
+      <button id="btn-add-profile" type="button">Add profile</button>
+      <span id="profile-status" style="margin-left:.5rem; color:var(--muted);"></span>
+    </div>
+
+    <div id="compare-panel" style="margin-bottom:1rem; display:none;">
+      <strong>Compare profiles:</strong>
+      <select id="compare-a"></select>
+      <select id="compare-b"></select>
+      <button id="btn-compare" type="button">Compare</button>
+    </div>
+
   </header>
 
   <main>
@@ -181,6 +280,9 @@
       <button id="btn-clear" type="button">Clear</button>
       <span id="status" class="status" aria-live="polite"></span>
     </div>
+
+    <div id="compare-output"></div>
+
   </main>
 
   <script>
@@ -196,6 +298,35 @@
       responses: {}
     };
 
+    // ============================================================
+// PROFILE REGISTRY (for partner comparison)
+// ============================================================
+
+const PROFILES_KEY = "kink.profiles.v1";
+
+function loadProfiles() {
+  const raw = localStorage.getItem(PROFILES_KEY);
+  if (raw) return JSON.parse(raw);
+
+  const initial = {
+    activeProfileId: "me",
+    profiles: [
+      { id: "me", label: "Me" }
+    ]
+  };
+  localStorage.setItem(PROFILES_KEY, JSON.stringify(initial));
+  return initial;
+}
+
+function saveProfiles(data) {
+  localStorage.setItem(PROFILES_KEY, JSON.stringify(data));
+}
+
+function getProfiles() {
+  return loadProfiles().profiles;
+}
+
+
     /* ==========================================
        CONSTANTS
     ============================================= */
@@ -203,10 +334,77 @@
     const INTEREST_OPTIONS = [
       ["hard_limit", "Hard limit"],
       ["soft_limit", "Soft limit"],
-      ["maybe", "Maybe"],
+      ["maybe", "Maybe/curious"],
       ["yes", "Yes"],
-      ["fetish_need", "Fetish need"]
+      ["fetish_need", "Fetish/core need"]
     ];
+
+    // ============================================================
+// INTEREST RANKING + COMPARISON HELPERS
+// ============================================================
+
+const INTEREST_RANK = {
+  hard_limit: 0,
+  soft_limit: 1,
+  maybe: 2,
+  yes: 3,
+  fetish_need: 4
+};
+
+function compareActivity(aRec, bRec) {
+  const a = aRec ?? { done:false, rating:null, interest:"maybe" };
+  const b = bRec ?? { done:false, rating:null, interest:"maybe" };
+
+  if (a.interest === "hard_limit" || b.interest === "hard_limit") {
+    return { status: "hard_stop", a, b };
+  }
+
+  if (!aRec || !bRec || !a.interest || !b.interest) {
+    return { status: "unknown", a, b };
+  }
+
+  if (a.interest === "soft_limit" || b.interest === "soft_limit") {
+    return { status: "caution", a, b };
+  }
+
+  const aRank = INTEREST_RANK[a.interest] ?? 2;
+  const bRank = INTEREST_RANK[b.interest] ?? 2;
+
+  if (aRank >= 3 && bRank >= 3) return { status: "green", a, b };
+  if (aRank >= 2 && bRank >= 2) return { status: "okay", a, b };
+
+  return { status: "mismatch", a, b };
+}
+
+function findLabel(schema, id) {
+  for (const g of schema.groups || []) {
+    for (const a of g.activities || []) {
+      if (a.id === id) return a.label;
+    }
+  }
+  return id;
+}
+
+function compareCategory(schema, aItems, bItems) {
+  const ids = new Set([
+    ...Object.keys(aItems || {}),
+    ...Object.keys(bItems || {})
+  ]);
+
+  const ordered = [];
+  for (const g of schema.groups || []) {
+    for (const a of g.activities || []) ordered.push(a.id);
+  }
+  for (const id of ids) {
+    if (!ordered.includes(id)) ordered.push(id);
+  }
+
+  return ordered.map(id => ({
+    id,
+    label: findLabel(schema, id),
+    ...compareActivity(aItems?.[id], bItems?.[id])
+  }));
+}
 
     init();
 
@@ -251,6 +449,9 @@
       buttons.forEach((btn, idx) => {
         const cat = state.categories[idx];
         const isActive = cat?.id === state.currentCategory?.id;
+
+        btn.classList.toggle("active", isActive);
+
         if (isActive) btn.setAttribute("aria-current", "page");
         else btn.removeAttribute("aria-current");
       });
@@ -309,8 +510,11 @@
 
     function clearResponses() {
       state.responses = {};
-      // re-render current category with empty state
-      if (state.currentSchema) renderV1(state.currentSchema);
+      if (!state.currentSchema) return;
+
+      if (state.currentCategory?.engine === "rs") renderRS(state.currentSchema);
+      else renderV1(state.currentSchema);
+
       setStatus("Cleared (not saved).");
     }
 
@@ -554,7 +758,7 @@ function setRSStatus(msg) {
 
 }
 
-  // -----V1 render ----
+  // -----V1 render ----//
 
     function renderV1(schema) {
       const root = document.getElementById("category-root");
@@ -571,30 +775,48 @@ function setRSStatus(msg) {
         return;
       }
 
-      schema.groups.forEach(group => {
-        const section = document.createElement("section");
-        section.className = "group";
+schema.groups.forEach(group => {
+  const details = document.createElement("details");
+  details.className = "group";
 
-        const h3 = document.createElement("h3");
-        h3.textContent = group.title;
-        section.appendChild(h3);
+  const summary = document.createElement("summary");
+  summary.innerHTML = `
+    <span>${group.title}</span>
+    <span class="meta">${group.activities.length} items</span>
+  `;
+  details.appendChild(summary);
 
-        const header = document.createElement("div");
-        header.className = "v1-header";
-        header.innerHTML = `
-          <div>Activity</div>
-          <div>Done</div>
-          <div>Rating</div>
-          <div>Interest</div>
-        `;
-        section.appendChild(header);
+  // Accordion groups
+  details.addEventListener("toggle", () => {
+    if (!details.open) return;
+    document.querySelectorAll("#category-root details.group").forEach(d => {
+      if (d !== details) d.open = false;
+    });
+    
+  });
 
-        (group.activities || []).forEach(act => {
-          section.appendChild(renderActivityRow(act));
-        });
+  const content = document.createElement("div");
+  content.className = "group-content";
 
-        root.appendChild(section);
-      });
+  const header = document.createElement("div");
+  header.className = "activity-header";
+  header.innerHTML = `
+    <div>Activity</div>
+    <div class="h-center">Tried</div>
+    <div>Enjoyment</div>
+    <div>Interest</div>
+    <div>Notes</div>
+  `;
+  content.appendChild(header);
+
+  group.activities.forEach(act => {
+    content.appendChild(renderActivityRow(act));
+  });
+
+  details.appendChild(content);
+  root.appendChild(details);
+});
+
     }
 
     function renderActivityRow(act) {
@@ -613,9 +835,9 @@ function setRSStatus(msg) {
 
       // RATING
       const rating = document.createElement("select");
-      rating.setAttribute("aria-label", `${act.label}: rating (1–5)`);
+      rating.setAttribute("aria-label", `${act.label}: enjoyment rating (1–5)`);
       rating.innerHTML =
-        `<option value="">—</option>` +
+        `<option value="">Not rated</option>` +
         [1, 2, 3, 4, 5].map(n => `<option value="${n}">${n}</option>`).join("");
 
       // INTEREST
@@ -625,32 +847,42 @@ function setRSStatus(msg) {
         `<option value="">—</option>` +
         INTEREST_OPTIONS.map(([v, t]) => `<option value="${v}">${t}</option>`).join("");
 
+      // NOTES
+      const notes = document.createElement("textarea");
+      notes.setAttribute("aria-label", `${act.label}: notes`);
+      notes.placeholder = "Notes (boundaries, context, agreements...)";
+
       const r = state.responses[act.id] || {};
       done.checked = !!r.done;
       rating.value = r.rating ?? "";
-      interest.value = r.interest ?? "";
+      interest.value = r.interest ?? "maybe"; // recommended default
+      notes.value = r.notes ?? "";
       rating.disabled = !done.checked;
 
       done.addEventListener("change", () => {
         rating.disabled = !done.checked;
         if (!done.checked) rating.value = "";
-        updateResponse(act.id, done, rating, interest);
+        updateResponse(act.id, done, rating, interest, notes);
       });
 
-      rating.addEventListener("change", () => updateResponse(act.id, done, rating, interest));
-      interest.addEventListener("change", () => updateResponse(act.id, done, rating, interest));
+      rating.addEventListener("change", () => updateResponse(act.id, done, rating, interest, notes));
+      interest.addEventListener("change", () => updateResponse(act.id, done, rating, interest, notes));
+      notes.addEventListener("input", () => updateResponse(act.id, done,rating, interest, notes));
 
-      row.append(done, rating, interest);
+      row.append(done, rating, interest, notes);
       return row;
     }
 
-    function updateResponse(id, done, rating, interest) {
-      state.responses[id] = {
-        done: done.checked,
-        rating: done.checked && rating.value ? Number(rating.value) : null,
-        interest: interest.value || null
-      };
-    }
+function updateResponse(id, done, rating, interest, notesEl) {
+  const prev = state.responses[id] || {};
+  state.responses[id] = {
+    done: done.checked,
+    rating: done.checked && rating.value ? Number(rating.value) : null,
+    interest: interest.value || "maybe",
+    notes: (notesEl?.value ?? prev.notes ?? "").trim()
+  };
+}
+
 
     /* ============================================================
        UI HELPERS
@@ -662,6 +894,261 @@ function setRSStatus(msg) {
     function setStatus(msg) {
       document.getElementById("status").textContent = msg;
     }
+
+// ============================================================
+// PROFILE UI (select + add)
+// ============================================================
+
+function refreshProfileSelect() {
+  const select = document.getElementById("profile-select");
+  const status = document.getElementById("profile-status");
+  const data = loadProfiles();
+
+  select.innerHTML = "";
+  data.profiles.forEach(p => select.add(new Option(p.label, p.id)));
+
+  // Keep state + registry aligned
+  const active = data.activeProfileId || state.profileId || "me";
+  state.profileId = active;
+  select.value = active;
+
+  status.textContent = `Saving as: ${state.profileId}`;
+}
+
+document.getElementById("profile-select").addEventListener("change", (e) => {
+  const data = loadProfiles();
+  data.activeProfileId = e.target.value;
+  saveProfiles(data);
+
+  state.profileId = e.target.value;
+
+  // Reload current category’s responses for the new profile
+  loadResponses();
+  if (state.currentCategory?.engine === "rs") renderRS(state.currentSchema);
+  else renderV1(state.currentSchema);
+
+  setStatus("");
+  refreshProfileSelect();
+});
+
+document.getElementById("btn-add-profile").addEventListener("click", () => {
+  const name = prompt("New profile name (e.g., Alex):");
+  if (!name) return;
+
+  const id = name.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  if (!id) return alert("Couldn’t make an ID from that name.");
+
+  const data = loadProfiles();
+  if (data.profiles.some(p => p.id === id)) return alert("That profile already exists.");
+
+  data.profiles.push({ id, label: name.trim() });
+  data.activeProfileId = id;
+  saveProfiles(data);
+
+  state.profileId = id;
+  loadResponses();
+  if (state.currentCategory?.engine === "rs") renderRS(state.currentSchema);
+  else renderV1(state.currentSchema);
+
+  refreshProfileSelect();
+  initCompareUI(); // compare panel after 2+ profiles
+});
+
+// Call once at startup
+setTimeout(refreshProfileSelect, 0);
+
+
+    // ============================================================
+// COMPARE UI WIRING
+// ============================================================
+
+function initCompareUI() {
+  const panel = document.getElementById("compare-panel");
+  const selA = document.getElementById("compare-a");
+  const selB = document.getElementById("compare-b");
+
+  const profiles = getProfiles();
+  if (profiles.length < 2) return; // nothing to compare yet
+
+  panel.style.display = "block";
+
+  selA.innerHTML = "";
+  selB.innerHTML = "";
+
+  profiles.forEach(p => {
+    selA.add(new Option(p.label, p.id));
+    selB.add(new Option(p.label, p.id));
+  });
+
+  selA.value = profiles[0].id;
+  selB.value = profiles[1].id;
+}
+
+document.getElementById("btn-compare").addEventListener("click", () => {
+  const aId = document.getElementById("compare-a").value;
+  const bId = document.getElementById("compare-b").value;
+
+  if (!state.currentCategory || !state.currentSchema) return;
+
+  const version = state.currentSchema.version;
+  const catId = state.currentCategory.id;
+
+  const aKey = `kink.v1.${aId}.${catId}.v${version}`;
+  const bKey = `kink.v1.${bId}.${catId}.v${version}`;
+
+  const aData = JSON.parse(localStorage.getItem(aKey) || "{}").responses || {};
+  const bData = JSON.parse(localStorage.getItem(bKey) || "{}").responses || {};
+
+  const results = compareCategory(state.currentSchema, aData, bData);
+  renderCompareResults(results);
+});
+
+// ============================================================
+// COMPARE OUTPUT (shows both sides)
+// ============================================================
+
+function interestLabel(v) {
+  return ({
+    hard_limit: "Hard limit",
+    soft_limit: "Soft limit",
+    maybe: "Maybe",
+    yes: "Yes",
+    fetish_need: "Fetish/core need"
+  })[v] || "—";
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[c]));
+}
+
+function formatSideHtml(rec, whoLabel) {
+  const i = interestLabel(rec?.interest);
+  const tried = rec?.done ? "Tried" : "Not tried";
+  const rating = (rec?.done && rec?.rating) ? `, ${rec.rating}/5` : "";
+
+  const safeWho = escapeHtml(whoLabel || "");
+  const safeNotes = rec?.notes ? escapeHtml(rec.notes) : "";
+
+  const summary = `<div><strong>${safeWho}:</strong> ${i} • ${tried}${rating}</div>`;
+
+  if (!safeNotes) return summary;
+
+  // Notes block with clamp + toggle hook
+  return `
+    ${summary}
+    <div class="note-block">
+      <div class="note-label">Notes</div>
+      <div class="note-text note-clamp">${safeNotes}</div>
+      <span class="note-toggle" data-note-toggle="1">Show more</span>
+    </div>
+  `;
+}
+
+function renderCompareResults(rows) {
+  const out = document.getElementById("compare-output");
+  out.innerHTML = "";
+
+  const aId = document.getElementById("compare-a")?.value || "A";
+  const bId = document.getElementById("compare-b")?.value || "B";
+
+
+  // Severity sort order: worst → best (so the important stuff is first)
+  const ORDER = { hard_stop: 0, caution: 1, mismatch: 2, unknown: 3, okay: 4, green: 5 };
+
+  // Group titles
+  const sections = [
+    ["hard_stop", "⛔ Hard stop (someone has a hard limit)"],
+    ["caution", "⚠ Needs care (someone has a soft limit)"],
+    ["mismatch", "✖ Mismatch"],
+    ["unknown", "? Incomplete / missing info"],
+    ["okay", "◐ Both open (maybe+)"],
+    ["green", "✔ Mutual yes (yes+)"]
+  ];
+
+  // Sort once 
+  const sorted = [...rows].sort((x, y) => (ORDER[x.status] ?? 99) - (ORDER[y.status] ?? 99));
+
+  // Header
+  const header = document.createElement("div");
+  header.style.margin = "0.5rem 0 1rem 0";
+  header.style.color = "var(--muted)";
+  header.textContent = `Comparing: ${aId} vs ${bId}`;
+  out.appendChild(header);
+
+  sections.forEach(([key, title]) => {
+    const items = sorted.filter(r => r.status === key);
+    if (!items.length) return;
+
+    const h = document.createElement("h3");
+    h.textContent = `${title} (${items.length})`;
+    out.appendChild(h);
+
+    // Card-ish list
+    const wrap = document.createElement("div");
+    wrap.style.border = "1px solid var(--border)";
+    wrap.style.borderRadius = "14px";
+    wrap.style.background = "var(--panel)";
+    wrap.style.padding = "0.75rem 1rem";
+    wrap.style.marginBottom = "1rem";
+
+    items.forEach((r, idx) => {
+      const row = document.createElement("div");
+      row.style.padding = "0.6rem 0";
+      if (idx !== 0) row.style.borderTop = "1px solid var(--border)";
+
+      const titleLine = document.createElement("div");
+      titleLine.style.fontWeight = "650";
+      titleLine.textContent = r.label;
+
+      const detail = document.createElement("div");
+      detail.style.color = "var(--muted)";
+      detail.style.marginTop = "0.25rem";
+      detail.style.lineHeight = "1.35";
+      detail.innerHTML = `
+        ${formatSideHtml(r.a, aId)}
+        ${formatSideHtml(r.b, bId)}
+      `;
+
+      row.appendChild(titleLine);
+      row.appendChild(detail);
+      wrap.appendChild(row);
+    });
+
+    out.appendChild(wrap);
+  });
+
+// Wire note toggles (Show more / Show less)
+out.querySelectorAll(".note-toggle").forEach(toggle => {
+  toggle.addEventListener("click", () => {
+    const noteText = toggle.parentElement.querySelector(".note-text");
+    if (!noteText) return;
+
+    const isClamped = noteText.classList.contains("note-clamp");
+    if (isClamped) {
+      noteText.classList.remove("note-clamp");
+      toggle.textContent = "Show less";
+    } else {
+      noteText.classList.add("note-clamp");
+      toggle.textContent = "Show more";
+    }
+  });
+});
+
+  // No matches
+  if (!out.children.length) {
+    out.textContent = "No comparison data yet.";
+  }
+}
+
+// Call after init
+setTimeout(initCompareUI, 0);
+
   </script>
 </body>
 </html>
