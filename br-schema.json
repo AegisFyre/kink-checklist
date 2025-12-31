@@ -1,49 +1,52 @@
 {
-  "categoryId": "care-dependency-daily-life-control",
-  "title": "Care, Dependency & Daily Life Control",
+  "categoryId": "bondage-restraint",
+  "title": "Bondage, Restraint & Confinement",
   "version": 1,
   "groups": [
-
     {
-      "id": "cdlc-dependency",
-      "title": "Dependency & reliance",
+      "id": "br-methods",
+      "title": "Restraint methods",
       "activities": [
-        { "id": "cdlc.dependence.emotional_anchor", "label": "Emotional anchor dynamic (one partner as primary stabiliser)" },
-        { "id": "cdlc.dependence.permission_to_stop", "label": "Needing permission to stop an activity (consensual structure)" },
-        { "id": "cdlc.dependence_reassurance", "label": "Reassurance as a structured need (asked/given in a system)" },
-        { "id": "cdlc.dependence_daily_contact", "label": "Expected daily contact (good morning/night, etc.)" }
+        { "id": "br.method.rope", "label": "Rope bondage" },
+        { "id": "br.method.cuffs", "label": "Cuffs (metal, leather, Velcro)" },
+        { "id": "br.method.tape", "label": "Tape or plastic wrap" },
+        { "id": "br.method.fabric", "label": "Fabric restraints (scarves, ties)" },
+        { "id": "br.method.chain", "label": "Chain or heavy restraints" },
+        { "id": "br.method.harness", "label": "Body harnesses" },
+        { "id": "br.method.furniture", "label": "Immobilizing furniture (stocks, crosses)" }
       ]
     },
     {
-      "id": "cdlc-daily-structure",
-      "title": "Daily structure & routines",
+      "id": "br-immobilization",
+      "title": "Degree of immobilization",
       "activities": [
-        { "id": "cdlc.routine.sleep", "label": "Sleep routine expectations (bedtime/wake time)" },
-        { "id": "cdlc.routine.food", "label": "Food routines (meals, hydration reminders)" },
-        { "id": "cdlc.routine.exercise", "label": "Exercise expectations or accountability" },
-        { "id": "cdlc.routine.self_care", "label": "Self-care routines (hygiene, meds, journaling)" },
-        { "id": "cdlc.routine_productivity", "label": "Productivity routines (work blocks, task lists)" }
+        { "id": "br.immobile.partial", "label": "Partial restraint (one limb or loose binding)" },
+        { "id": "br.immobile.full", "label": "Full limb restraint" },
+        { "id": "br.immobile.extreme", "label": "Extreme positioning (hogtie, stress positions)" },
+        { "id": "br.immobile.adjustable", "label": "Immobilized but adjustable" },
+        { "id": "br.immobile.total", "label": "Completely immobile" }
       ]
     },
     {
-      "id": "cdlc-accountability",
-      "title": "Accountability & monitoring",
+      "id": "br-confinement",
+      "title": "Confinement & containment",
       "activities": [
-        { "id": "cdlc.accountability.reporting", "label": "Reporting (daily/weekly updates)" },
-        { "id": "cdlc.accountability.goals", "label": "Shared goals with accountability" },
-        { "id": "cdlc.accountability.rules", "label": "Standing rules about behaviour (non-sexual)" },
-        { "id": "cdlc.accountability.consequences", "label": "Consequences for missed commitments (agreed, non-abusive)" }
+        { "id": "br.conf.furniture", "label": "Tied or secured to furniture" },
+        { "id": "br.conf.enclosure", "label": "Enclosure (cage, crate, closet)" },
+        { "id": "br.conf.covered", "label": "Covered or enclosed spaces (blankets, wraps)" },
+        { "id": "br.conf.hooding", "label": "Hooding or sensory enclosure (non-breath restriction)" },
+        { "id": "br.conf.locked_room", "label": "Locked rooms (with agreed access protocols)" }
       ]
     },
     {
-      "id": "cdlc-domains",
-      "title": "Domains of daily-life control (agreed areas)",
+      "id": "br-duration",
+      "title": "Duration & conditions",
       "activities": [
-        { "id": "cdlc.domain_clothing", "label": "Clothing control (what to wear / how to present)" },
-        { "id": "cdlc.domain_social", "label": "Social control (who/when to see others — negotiated)" },
-        { "id": "cdlc.domain_spending", "label": "Spending/budget constraints (agreed rules)" },
-        { "id": "cdlc.domain_media", "label": "Media use (screen time, content limits)" },
-        { "id": "cdlc.domain_space", "label": "Space/house rules (cleanliness, chores, permissions)" }
+        { "id": "br.duration.short", "label": "Short-term restraint (minutes)" },
+        { "id": "br.duration.scene", "label": "Extended scenes (1–2 hours)" },
+        { "id": "br.duration.long", "label": "Long-term restraint" },
+        { "id": "br.duration.sleep", "label": "Sleeping while restrained" },
+        { "id": "br.duration.unattended", "label": "Restrained while unattended (*please negotiate safety plans)" }
       ]
     }
   ]
